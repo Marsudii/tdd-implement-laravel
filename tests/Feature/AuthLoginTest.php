@@ -4,8 +4,11 @@ use Firebase\JWT\JWT;
 
 describe("Login Negative Test Case", function () {
 
+
+
     it('Login Required', function () {
         // Mengirimkan permintaan HTTP POST ke endpoint /api/v1/login dengan email dan password kosong
+
         $response = $this->withHeaders(['Accept' => 'application/json'])->post('/api/v1/login', [
             'email' => '',
             'password' => ''
@@ -28,6 +31,9 @@ describe("Login Negative Test Case", function () {
         // Memeriksa kode status respons
         $response->assertStatus(422);
     });
+
+
+
 
 
 
@@ -153,6 +159,15 @@ describe("Login Positive Test Case", function () {
     });
 });
 
+
+test("test login", function () {
+    $controllerTest = new \App\Http\Controllers\API\AuthController();
+
+    $test = $controllerTest->test();
+
+    expect($test)->toBe("ok");
+
+});
 
 
 

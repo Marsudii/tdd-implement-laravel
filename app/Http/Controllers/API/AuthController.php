@@ -75,19 +75,12 @@ class AuthController extends Controller
     }
 
 
-    function add(Request $request)
-    {
-        return $request->all();
+
+    function test(){
+        return "ok";
     }
 
-    function delete($id, Request $request)
-    {
-        $result = [
-            'request' => $request->all(),
-            'id' => $id,
-        ];
-        return $result;
-    }
+
 
 
 }

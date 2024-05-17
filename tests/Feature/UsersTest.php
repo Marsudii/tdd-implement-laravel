@@ -66,6 +66,10 @@ describe("Users", function () {
 });
 
 
+
+
+
+
 describe("User CRUD", function () {
 
     it('Name Required', function () {
@@ -185,6 +189,7 @@ describe("User CRUD", function () {
 
         // Memeriksa apakah pengguna baru telah dibuat dengan benar
         expect($user)->toBeInstanceOf(User::class);
+
         expect($user->name)->toBeString($user->name);
         expect($user->email)->toBeString($user->email);
 

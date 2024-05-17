@@ -15,13 +15,14 @@ Route::GET('_docs', function () {
 });
 
 
-//Route::POST('math', [Math::class, 'pembagian'])->name('math');
+//Route::POST('math', [Math.php::class, 'pembagian'])->name('math');
 
-//
-//Route::prefix('v1')->group(function () {
-//    Route::POST('login', [AuthController::class, 'login'])->name('login');
-//    Route::POST('users/add', [UserController::class, 'add'])->name('users-add');
-//    Route::middleware([Auth::class])->group(function () {
-//        Route::GET('users', [UserController::class, 'all'])->name('users-all');
-//    });
-//});
+
+Route::prefix('v1')->group(function () {
+    Route::POST('login', [AuthController::class, 'login'])->name('login');
+
+    Route::POST('users/add', [UserController::class, 'add'])->name('users-add');
+    Route::middleware([Auth::class])->group(function () {
+        Route::GET('users', [UserController::class, 'all'])->name('users-all');
+    });
+});
